@@ -138,6 +138,22 @@ interface {}{{
       }
     )
   ),
+  -- twmerge样式合并
+  s(
+    {
+      trig = "cl",
+      desc = "Console log"
+
+    },
+    fmt(
+      [[
+      console.log("{}")
+  ]],
+      {
+        i(1, ""),
+      }
+    )
+  ),
   -- 合并空尖括号
   s(
     "<>",
@@ -146,5 +162,13 @@ interface {}{{
       i(1, ""),
       t("</>")
     }
-  )
+  ),
+  -- container const {container} = styles
+  s(
+    "cont",
+    {
+      t("const { container } = styles"),
+    }
+  ),
+
 })

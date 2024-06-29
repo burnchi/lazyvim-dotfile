@@ -11,6 +11,7 @@ return {
       "<cmd>Telescope find_files<cr>",
       desc = "Find File",
     },
+    -- ban previous keymap
     {
       "<leader>ss",false
     }

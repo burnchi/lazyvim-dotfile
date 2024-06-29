@@ -16,3 +16,12 @@ ls.add_snippets(file_pattern, {
     t("console.log("), i(1), t(")")
   })
 })
+
+-- 快速导包
+ls.add_snippets("typescriptreact",{
+  s("sty", {
+    t("import styles from \"@/app/styles/"),i(1),t("\"")
+  })
+})
+
+
