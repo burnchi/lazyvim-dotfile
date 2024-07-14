@@ -1,3 +1,4 @@
+-- file tag
 return {
   "akinsho/bufferline.nvim",
   event = "VeryLazy",

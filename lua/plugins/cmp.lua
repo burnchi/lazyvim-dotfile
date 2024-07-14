@@ -1,4 +1,4 @@
----@diagnostic disable: missing-fields
+-- @diagnostic disable: missing-fields
 -- 代码补全 和 括号补齐
 local kind_icons = {
   Text = "",
