@@ -15,6 +15,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank({ timeout = 300, visual = true })
   end,
 })
+--
 
 -- 系统剪切板,粘贴没有乱码
 if vim.fn.has('wsl') then
