@@ -57,6 +57,7 @@ return {
 						},
 					},
 				},
+        prismals = {},
 				html = {},
 				lua_ls = {
 					-- enabled = false,

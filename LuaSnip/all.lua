@@ -23,5 +23,10 @@ ls.add_snippets("typescriptreact",{
     t("import styles from \"@/app/styles/"),i(1),t("\"")
   })
 })
+ls.add_snippets("typescriptreact",{
+  s("sty1", {
+    t("import styles from \"@/app/(dashboard)/styles/"),i(1),t("\"")
+  })
+})
 
 
