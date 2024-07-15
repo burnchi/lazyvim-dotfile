@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 --
 
--- 系统剪切板,粘贴没有乱码
+-- 系统剪切板,粘贴到外面没有乱码，但是内部粘贴使用p有乱码
 if vim.fn.has('wsl') then
 	vim.g.clipboard = {
 		name = 'WslClipboard',
