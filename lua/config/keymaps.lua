@@ -8,26 +8,13 @@
 -- https://github.com/mg979/vim-visual-multi
 ------------
 
-
-
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 -- delete switch buffer
 -- keymap.del("n", "<S-l>")
 -- keymap.del("n", "[b")
--- keymap.del("n", "]b")
+-- keymap.del("i", "<C-l>")
 ------------------------
--- lspsaga need this word
--- keymap.del('n', "K")
-
-
--- ban command popup
--- function opts()
---   return {
---     silent = true,
---     noremap = true
---   }
--- end
 
 -- ---------- 插入模式 ---------- ---
 keymap.set("i", "jk", "<ESC>")
@@ -55,8 +42,6 @@ keymap.set("n", "dL", "d$")
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "cancel highlight", silent = true })
 -- close window
 keymap.set("n", "<leader>wd", "<C-w>c", { desc = "close window" })
--- search something
-
 
 -- print current time
 -- keymap.set('n', '<leader>t', function()
@@ -66,15 +51,19 @@ keymap.set("n", "<leader>wd", "<C-w>c", { desc = "close window" })
 --   print(time)
 -- end, { desc = "Print Current Time", silent = true })
 
-
 -- ---------- 选择模式 ---------- ---
-
 
 -- ---------- 命令模式 ---------- ---
 -- stop search something or command line
-keymap.set('c', 'jk', '<c-c>', opts)
+keymap.set("c", "jk", "<c-c>", opts)
 
+-- fittencode
+keymap.set("i", "<a-j>", function()
+	require("fittencode").accept_all_suggestions()
+end, { desc = "accept_all_suggestions", silent = true, noremap = true })
 
+keymap.set("i", "<a-k>", function()
+	require("fittencode").dismiss_suggestions()
+end, { desc = "dismiss_all_suggestions", silent = true, noremap = true })
 
-
-keymap.set('t', '<esc>', [[<C-\><C-n>]], { buffer = 0 })
+vim.keymap.set("n", "<leader>fc", "<cmd>Fitten start_chat<cr>", { desc = "start_chat" })

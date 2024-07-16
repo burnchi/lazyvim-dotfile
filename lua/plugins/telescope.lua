@@ -14,6 +14,11 @@ return {
     -- ban previous keymap
     {
       "<leader>ss",false
+    },
+    -- fitten code
+    {
+
+      "<leader>fc",false
     }
 }
 }

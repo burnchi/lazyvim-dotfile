@@ -16,81 +16,99 @@
 -- })
 
 return {
-  'nvimdev/lspsaga.nvim',
-  event = { "LspAttach" },
-  dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-  },
-  keys = {
-    {
-      '[d',
-      '<cmd>Lspsaga diagnostic_jump_prev<CR>',
-      {
+	"nvimdev/lspsaga.nvim",
+	event = { "LspAttach" },
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
+	},
+	keys = {
+		-- incluede warning
+		-- {
+		--   '[d',
+		--   '<cmd>Lspsaga diagnostic_jump_prev<CR>',
+		--   {
+		--
+		--     silent = true,
+		--     desc = 'diagnostic_jump_prev'
+		--   }
+		-- },
+		-- {
+		--   ']d',
+		--   '<cmd>Lspsaga diagnostic_jump_next<CR>',
+		--   {
+		--     silent = true,
+		--     desc = 'diagnostic_jump_next'
+		--   }
+		-- },
+		{
+			"]d",
+			function()
+				require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+			end,
+			{
+				silent = true,
+			},
+		},
+		{
+			"[d",
+			function()
+				require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+			end,
+			{
+				silent = true,
+			},
+		},
+		{
+			"<leader>pd",
+			"<cmd>Lspsaga peek_definition<CR>",
+			{
+				silent = true,
+				desc = "peek definition",
+			},
+		},
+		{
+			"<leader>pt",
+			"<cmd>Lspsaga peek_type_definition<CR>",
+			{
+				silent = true,
+				desc = "peek type_definition",
+			},
+		},
+		-- {
+		--   '<leader>o',
+		--   '<cmd>Lspsaga outline<cr>',
+		--   desc = 'symbol outline'
+		-- },
+		{
+			"<leader>r",
+			"<cmd>Lspsaga rename<cr>",
+			desc = "Global Rename",
+		},
+		-- {
+		--   '<leader>ca',
+		--   function()
+		--     require("lspsaga.codeaction").code_action({ context = { only = "source" } })
+		--   end,
+		--   desc = 'Code Action'
+		-- },
+		{
+			"K",
+			"<cmd>Lspsaga hover_doc<cr>",
+			desc = "show Doc",
+		},
+	},
+	-- config = function()
+	-- local keymap = vim.keymap
+	-- require('lspsaga').setup({
+	opts = {
+		ui = {
+			border = "rounded",
+		},
+		lightbulb = {
+			enable = false,
+		},
+	},
+	-- })
 
-        silent = true,
-        desc = 'diagnostic_jump_prev'
-      }
-    },
-    {
-      ']d',
-      '<cmd>Lspsaga diagnostic_jump_next<CR>',
-      {
-        silent = true,
-        desc = 'diagnostic_jump_next'
-      }
-    },
-    {
-      '<leader>pd',
-      '<cmd>Lspsaga peek_definition<CR>',
-      {
-        silent = true,
-        desc = 'peek definition'
-      }
-    },
-    {
-      '<leader>pt',
-      '<cmd>Lspsaga peek_type_definition<CR>',
-      {
-        silent = true,
-        desc = 'peek type_definition'
-      }
-    },
-    -- {
-    --   '<leader>o',
-    --   '<cmd>Lspsaga outline<cr>',
-    --   desc = 'symbol outline'
-    -- },
-    {
-      '<leader>r',
-      '<cmd>Lspsaga rename<cr>',
-      desc = 'Global Rename'
-    },
-    -- {
-    --   '<leader>ca',
-    --   function()
-    --     require("lspsaga.codeaction").code_action({ context = { only = "source" } })
-    --   end,
-    --   desc = 'Code Action'
-    -- },
-    {
-      'K',
-      '<cmd>Lspsaga hover_doc<cr>',
-      desc = 'show Doc'
-    },
-  },
-  -- config = function()
-  -- local keymap = vim.keymap
-  -- require('lspsaga').setup({
-  opts = {
-    ui = {
-      border = 'rounded',
-    },
-    lightbulb = {
-      enable = false,
-    },
-
-  }
-  -- })
-
-  -- end,
+	-- end,
 }

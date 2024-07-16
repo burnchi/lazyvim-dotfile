@@ -35,5 +35,10 @@ local opt = vim.opt
 opt.signcolumn = 'no'
 
 -- Add asterisks in block comments
-
 vim.opt.formatoptions:append({ "r" })
+
+
+-- remove diagnostic virtual text
+-- vim.diagnostic.config({
+--     virtual_text = false
+-- })

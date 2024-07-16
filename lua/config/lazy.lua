@@ -16,7 +16,7 @@ require("lazy").setup({
 		{
 			"LazyVim/LazyVim",
 			import = "lazyvim.plugins",
-      -- theme
+			-- theme
 			opts = {
 				colorscheme = "sonokai",
 				news = {
@@ -25,14 +25,16 @@ require("lazy").setup({
 				},
 			},
 		},
-    --  https://www.lazyvim.org/extras 下载额外的插件
+		--  https://www.lazyvim.org/extras 下载额外的插件
 		{ import = "lazyvim.plugins.extras.linting.eslint" },
 		{ import = "lazyvim.plugins.extras.formatting.prettier" },
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.json" },
 		{ import = "lazyvim.plugins.extras.lang.tailwind" },
 		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
-     { import = "lazyvim.plugins.extras.coding.mini-surround" },
+		{ import = "lazyvim.plugins.extras.coding.mini-surround" },
+		-- { import = "lazyvim.plugins.extras.lang.rust" },
+		-- 自定义插件的目录名字
 		{ import = "plugins" },
 	},
 	defaults = {
@@ -42,7 +44,7 @@ require("lazy").setup({
 	dev = {
 		path = "~/.ghq/github.com",
 	},
-  -- 关闭更新提示
+	-- 关闭更新提示
 	checker = { enabled = false },
 	performance = {
 		cache = {
