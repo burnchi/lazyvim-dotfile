@@ -1,3 +1,4 @@
+-- 代码高亮
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -15,9 +16,9 @@ return {
 				"sql",
 				"vim",
 				"lua",
-        "prisma",
-        "rust",
-        "toml"
+				"prisma",
+				"rust",
+				"toml",
 			},
 			query_linter = {
 				enable = true,
