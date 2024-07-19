@@ -17,7 +17,7 @@ return {
 				"vim",
 				"lua",
 				"prisma",
-				"rust",
+				-- "rust",
 				"toml",
 			},
 			query_linter = {

@@ -6,7 +6,20 @@ return {
 			vim.g.sonokai_transparent_background = "1"
 			vim.g.sonokai_enable_italic = "1"
 			vim.g.sonokai_style = "andromeda"
-			vim.cmd.colorscheme("sonokai")
 		end,
+	},
+	{
+		"morhetz/gruvbox",
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		priority = 1000,
+	},
+
+	{
+		"LazyVim/LazyVim",
+		opts = {
+			colorscheme = "sonokai",
+		},
 	},
 }

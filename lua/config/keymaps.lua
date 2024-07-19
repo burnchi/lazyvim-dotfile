@@ -48,4 +48,6 @@ Map("i", "<a-k>", function()
 	require("fittencode").dismiss_suggestions()
 end, { desc = "dismiss_all_suggestions" })
 
-Map("n", "<leader>fc", "<cmd>Fitten start_chat<cr>", { desc = "start_chat" })
+Map("n", "<leader>fe", "<cmd>Fitten enable_completions<cr>", { desc = "enable fittencode", silent = false })
+Map("n", "<leader>fd", "<cmd>Fitten disable_completions<cr>", { desc = "close fittencode", silent = false })
+Map("n", "<leader>fc", "<cmd>Fitten start_chat<cr>", { desc = "start_chat", silent = false })
